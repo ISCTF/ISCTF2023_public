@@ -1,0 +1,46 @@
+#!/bin/sh
+
+#adduser www-data -G mysql
+
+mysqld_safe --secure-file-priv='/tmp/' &
+
+mysql_ready() {
+	mysqladmin ping --socket=/run/mysqld/mysqld.sock --user=root --password=4yWz8eu7HgNQVjD0 > /dev/null 2>&1
+}
+
+while !(mysql_ready)
+do
+	echo "waiting for mysql ..."
+	sleep 3
+done
+
+if [[ -f /flag.sh ]]; then
+	source /flag.sh
+fi
+
+if [[ -f /var/www/html/db.sql ]]; then
+    mysql -e "source /var/www/html/db.sql" -uroot -p4yWz8eu7HgNQVjD0
+    rm -f /var/www/html/db.sql
+fi
+
+if [[ -f /var/www/html/db2.sql ]]; then
+    mysql -e "source /var/www/html/db2.sql" -uroot -p4yWz8eu7HgNQVjD0
+    rm -f /var/www/html/db2.sql
+fi
+
+php-fpm &
+
+nginx &
+
+chown root:root /var/www/html/flag.txt
+
+chmod 400 /var/www/html/flag.txt
+
+mv /var/www/html/flag.txt /flag.txt
+
+rm -rf /flag.sh
+
+
+#ps -ef | grep mysql | grep -v grep | awk '{print $1}' | xargs kill -9
+
+tail -F /dev/null

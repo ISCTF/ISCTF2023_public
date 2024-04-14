@@ -1,0 +1,10 @@
+题目名称：baby group
+题目类型：Crypto
+出题人：guoql
+学校：河南师范大学
+题目环境：附件
+题目难度：难
+题目考点：对称群，格密码学
+题目描述：小明在学习近世代数的时候，会了两个单词，一个是abstract，一个是abandon
+题目提示：P class is permutation
+解题思路：见wp（注：wp有LaTeX公式，需要渲染才可显示）

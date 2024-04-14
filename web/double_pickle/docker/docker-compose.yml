@@ -1,0 +1,10 @@
+version: '3'
+services:
+  test:
+    # image: test
+    build: ../
+    environment:
+      FLAG: "ISCTF{picpicklekle_is_funny-Jay17}"
+    ports:
+      - 8080:8080
+    restart: unless-stopped

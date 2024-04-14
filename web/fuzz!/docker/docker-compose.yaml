@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build: ../
+    # image: test
+    ports:
+      - "8080:80"
+    environment:
+      - FLAG=ISCTF{Fuzz_is_a_great_trick_Did_you_find_curly_braces?-Jay17}

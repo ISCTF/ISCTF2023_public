@@ -1,0 +1,2 @@
+User-agent：*
+Disallow：/here_is_a_sercet.php

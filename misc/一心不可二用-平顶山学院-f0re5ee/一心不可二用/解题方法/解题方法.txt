@@ -1,0 +1,2 @@
+打开安装包搜索flag，搜到flag.zip，根据压缩包注释的报错,发现报错也异常，根据unexpected EOF while parsing，发现这里应该是SyntaxError而不是TabError
+密码为SyntaxError，解开即得flag

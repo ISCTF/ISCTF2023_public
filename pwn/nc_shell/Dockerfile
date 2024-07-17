@@ -21,9 +21,9 @@ RUN mkdir /home/ctf/dev && \
     cp /bin/cat /home/ctf/bin && \
     cp -R /usr/lib* /home/ctf && \
     echo "Blocked by ctf_xinetd" > /etc/banner_fail && \
+    echo flag > /home/ctf/flag && \
     chown -R root:ctf /home/ctf && \
     chmod -R 750 /home/ctf && \
-    echo flag > /home/ctf/flag && \
     chmod 740 /home/ctf/flag && \
     chmod +x /start.sh
 
